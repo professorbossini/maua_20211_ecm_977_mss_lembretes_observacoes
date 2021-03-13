@@ -32,6 +32,11 @@ app.get( '/lembretes/:id/observacoes', (req, res) => {
   res.send(observacoesPorLembreteId[req.params.id] || []);
 })
 
+app.post ('/eventos', (req, res) => {
+  console.log(req.body);
+  res.status(200).send({msg: "ok"});
+})
+
 app.listen(5000, () => {
   console.log('Microsserviço de observações em execução. Porta 5000.');
 })

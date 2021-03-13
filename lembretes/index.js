@@ -21,6 +21,11 @@ app.put('/lembretes', async (req, res) => {
   res.status(201).send(lembretes[contador]);
 });
 
+app.post ('/eventos', (req, res) => {
+  console.log(req.body);
+  res.status(200).send({msg: "ok"});
+})
+
 app.listen(4000, () => {
   console.log('Microsserviços de lembretes em funcionamento. Porta 4000.');
 });
