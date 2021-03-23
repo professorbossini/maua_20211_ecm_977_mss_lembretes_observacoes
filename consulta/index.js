@@ -12,12 +12,21 @@ const funcoes = {
     const observacoes = baseConsulta[observacao.lembreteId]['observacoes'] || [];
     observacoes.push(observacao);
     baseConsulta[observacao.lembreteId]['observacoes'] = observacoes;
+  },
+  ObservacaoAtualizada: (observacao) => {
+    const observacoes = baseConsulta[observacao.lembreteId]['observacoes'];
+    const indice = observacoes.findIndex (o => o.id === observacao.id);
+    observacoes[indice] = observacao;
   }
 };
 
 app.post("/eventos", (req, res) => {
-  const evento = req.body;
-  funcoes[evento.tipo](req.body.dados);
+  console.log ('chegou evento', req.body);
+  try{
+    const evento = req.body;
+    funcoes[evento.tipo](req.body.dados);
+  }
+  catch (err){}
   res.status(200).send(baseConsulta);
   // if (evento.tipo === EventoCriado)
   //   tratarEventoLembrete;

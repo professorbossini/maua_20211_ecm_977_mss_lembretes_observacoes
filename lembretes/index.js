@@ -22,7 +22,9 @@ app.put('/lembretes', async (req, res) => {
 });
 
 app.post ('/eventos', (req, res) => {
-  console.log(req.body);
+  try{
+    console.log(req.body);
+  }catch(err){}
   res.status(200).send({msg: "ok"});
 })
 
