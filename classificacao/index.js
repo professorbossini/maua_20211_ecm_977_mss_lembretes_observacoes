@@ -22,7 +22,7 @@ app.post('/eventos', (req, res) => {
   try{
     funcoes[req.body.tipo](req.body.dados);
   }catch (err){
-    console.log('tipo: ' + req.body.tipo)
+    //console.log('tipo: ' + req.body.tipo)
   }
   res.status(200).send({msg: 'ok'});
 });
