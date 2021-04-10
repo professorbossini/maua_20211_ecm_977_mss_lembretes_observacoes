@@ -11,9 +11,9 @@ app.post('/eventos', (req, res) => {
   const evento = req.body;
   eventos.push(evento);
   //console.log(evento);
-  axios.post("http://localhost:4000/eventos", evento);
-  axios.post("http://localhost:5000/eventos", evento);
-  axios.post("http://localhost:7000/eventos", evento);
+  axios.post("http://192.168.1.161:4000/eventos", evento);
+  axios.post("http://192.168.1.161:5000/eventos", evento);
+  axios.post("http://192.168.1.161:7000/eventos", evento);
   res.status(200).json({msg: 'ok'});
 });
 
