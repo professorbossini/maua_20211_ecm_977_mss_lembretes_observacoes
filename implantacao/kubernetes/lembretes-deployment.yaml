@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: maua-ecm977-lembretes-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maua-ecm977-lembretes-deployment
+  template:
+      metadata:
+        labels:
+          app: maua-ecm977-lembretes-deployment
+      spec:
+        containers: 
+          - name: maua-ecm977-lembretes-deployment
+            image: rodbossini/maua-ecm977-lembretes
+            resources:
+              limits:
+                memory: 256Mi
+                cpu: "1"

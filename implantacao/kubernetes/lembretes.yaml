@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: maua-ecm977-lembretes
+spec:
+  containers:
+    - name: maua-ecm977-lembretes
+      image: rodbossini/maua-ecm977-lembretes:0.0.1
+      resources:
+        limits:
+          memory: 256Mi
+          cpu: "1"
